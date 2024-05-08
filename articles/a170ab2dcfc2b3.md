@@ -143,9 +143,7 @@ Next.js などではルーティングとファイル名が紐づいているた
 
 - `_features`の中には`(フォルダ名)/components`や`(フォルダ名)/hooks`などを配置する。
 
-- 共通コンポーネントは`/components`に配置する。`/components/ui`以外はスタイルを持つことができる。
-
-- `/components/ui`はライブラリのコンポーネント配置する。`/components/ui`はスタイルなどを行わず、そのまま`export`する。スタイルと story は行わない。
+- 共通コンポーネントは`/components`に配置する。
 
 ## おわりに
 
