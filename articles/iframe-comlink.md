@@ -94,7 +94,7 @@ const handlers = Comlink.wrap(
 
 ### 型をつける
 
-もちろん、`expose` するオブジェクトには型をつけることができます。
+`expose` するオブジェクトには型をつけることができます。
 iframe 側を別のリポジトリで開発するときなどは、 `turborepo`などのモノレポで開発して、型を共有すると便利です。
 
 ```tsx
@@ -161,7 +161,7 @@ expose(handlers);
 ```
 
 `onLoad` イベントで `workerRef.current` に `wrap` したオブジェクトをセットします。
-これで、他の箇所でも `workerRef.current` から `expose` したオブジェクトを使用することができます。
+これで、他の箇所でも `workerRef.current` を使用して `wrap` したオブジェクトを扱うことができます。
 
 ### 親側から iframe に `expose`する
 
