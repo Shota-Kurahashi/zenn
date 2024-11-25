@@ -2,7 +2,7 @@
 title: "[React] Comlinkを使ってiframeと通信する"
 emoji: "✨"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [react, iframe, comlink]
+topics: [react, comlink, typescript, javascript]
 published: false
 publication_name: "chot"
 ---
