@@ -98,25 +98,29 @@ const handlers = Comlink.wrap(
 iframe 側を別のリポジトリで開発するときなどは、 `turborepo`などのモノレポで開発して、型を共有すると便利です。
 
 ```tsx
-
-
 // type.ts
 type Handlers = {
   add: (a: number, b: number) => Promise<number>;
 };
+```
 
+```tsx
 // iframe.ts
 import * as Comlink from "comlink";
 
 const handlers: Handlers = {
-  add: (a: number, b: number) => Promise<number>;
+add: (a: number, b: number) => Promise<number>;
 };
 expose(handlers);
+```
 
+```tsx
 // main.ts
 import * as Comlink from "comlink";
 
-const handlers:Comlink.Remote<Handlers> = Comlink.wrap<Handlers>(Comlink.windowEndpoint(iframe.contentWindow));
+const handlers: Comlink.Remote<Handlers> = Comlink.wrap<Handlers>(
+  Comlink.windowEndpoint(iframe.contentWindow)
+);
 ```
 
 `wrap` したオブジェクトは、`Remote<T>` 型になります。
@@ -150,7 +154,9 @@ function Example() {
 
   return <iframe onLoad={handleOnLoad} />;
 }
+```
 
+```tsx
 // iframe.tsx
 import * as Comlink from "comlink";
 
@@ -177,7 +183,7 @@ import type { Handlers } from "@/packages/types";
 
 function Example() {
   const getApiData = async (key: string) => {
-    // key に対応するデータをCMSなどから取得
+    // データをCMSなどから取得
     const data = await getCMSData(key);
 
     return data;
@@ -230,7 +236,6 @@ https://developer.mozilla.org/ja/docs/Glossary/Serializable_object
 
 ```tsx
 // iframe.ts
-
 import * as Comlink from "comlink";
 type Handlers = {
   callFunction: (fn: () => void) => void;
@@ -243,7 +248,9 @@ const handlers: Handlers = {
 };
 
 Comlink.expose(handlers);
+```
 
+```tsx
 // main.tsx
 const handleOnClick = () => {
   const fuga = () => {
