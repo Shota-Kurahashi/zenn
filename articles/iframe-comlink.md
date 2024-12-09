@@ -81,7 +81,7 @@ https://github.com/GoogleChromeLabs/comlink?tab=readme-ov-file#comlinkwindowendp
 
 ### オリジンが異なる場合
 
-もし、iframe のオリジンが異なる場合は、`Comlink.windowEndpoint(iframe.contentWindow,self, targetOrigin)` のように、`targetOrigin` を指定します。
+もし、iframe のオリジンが異なる場合は、 `targetOrigin` を指定します。
 
 ```tsx
 // main.ts
@@ -98,7 +98,7 @@ const handlers = Comlink.wrap(
 iframe 側を別のリポジトリで開発するときなどは、 `turborepo`などのモノレポで開発して、型を共有すると便利です。
 
 ```tsx
-// type.ts
+// packages/schema/types.ts
 type Handlers = {
   add: (a: number, b: number) => Promise<number>;
 };
@@ -123,8 +123,8 @@ const handlers: Comlink.Remote<Handlers> = Comlink.wrap<Handlers>(
 );
 ```
 
-`wrap` したオブジェクトは、`Remote<T>` 型になります。
-`Remote<T>` は、`T` の関数がすべて非同期になるため注意が必要です。
+`wrap` したオブジェクトは、`Remote<T>` 型になり、
+`wrap`したオブジェクトは、非同期になります。
 
 ## React で Comlink を使う
 
