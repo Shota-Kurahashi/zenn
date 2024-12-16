@@ -29,7 +29,7 @@ import * as Comlink from "comlink";
 const handlers = {
   add: (a: number, b: number) => a + b,
 };
-expose(handlers);
+Comlink.expose(handlers);
 ```
 
 ```tsx
@@ -69,7 +69,7 @@ import * as Comlink from "comlink";
 const handlers = {
   add: (a: number, b: number) => a + b,
 };
-expose(handlers, Comlink.windowEndpoint(self.parent));
+Comlink.expose(handlers, Comlink.windowEndpoint(self.parent));
 ```
 
 iframe 側では、Web Worker のときと同様に`expose` を行い関数を受け取れるようにします。
