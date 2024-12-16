@@ -109,9 +109,9 @@ type Handlers = {
 import * as Comlink from "comlink";
 
 const handlers: Handlers = {
-add: (a: number, b: number) => Promise<number>;
+  add: (a: number, b: number) => Promise<number>;
 };
-expose(handlers);
+Comlink.expose(handlers);
 ```
 
 ```tsx
@@ -163,7 +163,7 @@ import * as Comlink from "comlink";
 const handlers = {
   add: (a: number, b: number) => a + b,
 };
-expose(handlers);
+Comlink.expose(handlers);
 ```
 
 `onLoad` イベントで `workerRef.current` に `wrap` したオブジェクトをセットします。
