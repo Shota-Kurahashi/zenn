@@ -3,7 +3,7 @@ title: "Comlinkを使ってiframeと通信する"
 emoji: "🌐"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [comlink, typescript, javascript]
-published: false
+published: true
 publication_name: "chot"
 ---
 
